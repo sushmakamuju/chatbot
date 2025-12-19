@@ -1,0 +1,21 @@
+#what happens when a user asks a question
+My chatbot first converts the user’s question into an embedding.
+During indexing, the documents were already broken into chunks and converted into embeddings.
+The retriever compares the question embedding with the document embeddings and selects the top few most relevant chunks.
+These chunks are combined into a context.
+Then the context and the original question are passed to the LLM.
+The LLM reads only this context and generates a natural-language answer, which we then show to the user.
+
+#Why chunking
+1️⃣ Length
+
+Documents = long → must split
+
+Question = short → no need
+
+2️⃣ Semantic purpose (important)
+
+Each document chunk should represent one clear idea
+
+A user question is already one semantic unit
+Chunking a question would actually hurt retrieval, not help it.
