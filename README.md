@@ -20,4 +20,5 @@ GROQ_API_KEY=your_groq_api_key_here
 MODEL_ID="llama-3.1-8b-instant"
 
 ##Run the Chatbot
+py build_index.py # Run only the first time (or when PDFs change)
 py chatbot.py
